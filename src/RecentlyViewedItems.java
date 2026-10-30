@@ -17,8 +17,7 @@ public class RecentlyViewedItems
         items.remove(item);
         items.addFirst(item);  //adding the the right
         if(items.size() >maxsize)
-            items.removeLast();  //removing old items
-
+            items.removeLast();//removing old items
     }
 }
 
