@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 
@@ -44,5 +45,32 @@ public class Inventory <T extends Item>
    {
        return new ArrayList(itemsmap.values());
    }
+
+   //filter method within  a range
+   public List<T> filterByPriceRange(double minprice,double maxprice)
+   {
+       List<T> filtered = new ArrayList<>();
+       for( T item : itemsmap.values())
+       {
+           if(item.getPrice()>= minprice && item.getPrice()<=maxprice)
+               filtered.add(item);
+       }
+       return filtered;
+   }
+
+   // filter by availability
+    public List<T> filterbyavablty()
+    {
+        List<T> filtered = new ArrayList<>();
+        for(T item : itemsmap.values())
+        {
+            if(item.getQuantity()>0)
+                filtered.add(item);
+        }
+        return  filtered;
+    }
+
+
+
 
 }

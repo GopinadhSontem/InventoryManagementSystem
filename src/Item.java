@@ -5,7 +5,8 @@ public class Item implements Comparable<Item>
     private int quantity;
     private double price;
 
-    public Item(String id, String name, int quantity, double price) {
+    public Item(String id, String name, int quantity, double price)
+    {
         this.id = id;
         this.name = name;
         this.quantity = quantity;
@@ -23,8 +24,6 @@ public class Item implements Comparable<Item>
     public double getPrice() {
         return price;
     }
-
-
     //this and other object
     //you want this to comefirst return -1
     //you want other to comefitst return +1
@@ -49,7 +48,7 @@ public class Item implements Comparable<Item>
     return this.name.compareToIgnoreCase(other.name);
   }
 
-    @Override
+   @Override
     public String toString()
     {
         return "Item{" +
